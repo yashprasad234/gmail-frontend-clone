@@ -1,19 +1,25 @@
-export default function Navbar() {
+export default function Navbar({ isExpanded, expanded }) {
   return (
     <div className="flex py-2 px-4 justify-between items-center">
       <div className="flex justify-center items-center gap-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="cursor-pointer size-6 cursor-pointer"
+        <button
+          onClick={() => {
+            isExpanded(!expanded);
+          }}
         >
-          <path
-            fillRule="evenodd"
-            d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-            clipRule="evenodd"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="cursor-pointer size-6 cursor-pointer"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
         <img
           src="images/gmail-logo.png"
           alt="logo"
@@ -36,7 +42,7 @@ export default function Navbar() {
         <input
           type="text"
           placeholder="Search mail"
-          className="bg-inherit w-full px-2"
+          className="bg-inherit w-full px-2 outline-none"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
