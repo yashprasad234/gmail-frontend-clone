@@ -1,4 +1,8 @@
-export default function Menu({ expanded }) {
+type PropTypes = {
+  expanded: boolean;
+};
+
+export default function Menu({ expanded }: PropTypes) {
   return (
     <div className={`flex flex-col p-4 ${expanded ? "w-60" : "w-28"} sticky`}>
       <div className={`flex p-4 gap-4 bg-blue-100 rounded-2xl w-4/5`}>
